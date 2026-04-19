@@ -901,3 +901,44 @@ body {
         height: 250px;
     }
 }
+/* ========== أيقونات Emoji للشعار ========== */
+.logo-icon {
+    font-size: 32px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+}
+
+.feature-icon, .info-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* تحسين حجم الأيقونات في الشاشات الصغيرة */
+@media (max-width: 600px) {
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
+    }
+    
+    .feature-icon, .info-icon {
+        font-size: 32px;
+    }
+}
+
+/* تحسين مظهر الأزرار */
+.btn-primary span, .btn-outline span {
+    margin-left: 5px;
+}
+
+/* تحسين مظهر زر الواتساب */
+.whatsapp-float span:first-child {
+    font-size: 24px;
+}
