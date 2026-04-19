@@ -130,26 +130,6 @@ const suitsData = [
         colorCodes: ['#ffff00', '#fffacd', '#ffd700', '#e1ad01', '#fff44f', '#ffcc66', '#ffbf00'],
         image: 'Pic1205.png',
         placeholder: 'https://placehold.co/600x800/1a1a1a/d4af37?text=بدلة+صفراء'
-    },
-    {
-        id: 14,
-        name: 'بدلة زيتية عسكرية',
-        description: 'تصميم عصري مستوحى من الطبيعة',
-        category: 'modern',
-        colors: ['زيتي', 'كاكي', 'أخضر عسكري', 'أخضر غابي', 'أخضر زيتوني غامق', 'بني زيتي'],
-        colorCodes: ['#6b8e23', '#c3b091', '#5e5a3c', '#2e4a1a', '#3b4a1a', '#4a3a1a'],
-        image: 'images/suit14.jpg',
-        placeholder: 'https://placehold.co/600x800/1a1a1a/d4af37?text=بدلة+زيتية'
-    },
-    {
-        id: 15,
-        name: 'بدلة برتقالية مميزة',
-        description: 'لون حيوي يضفي جاذبية على الإطلالة',
-        category: 'summer',
-        colors: ['برتقالي', 'برتقالي محروق', 'سموني', 'مرجاني', 'يوسفي', 'مشمشي', 'عنبري'],
-        colorCodes: ['#ffa500', '#cc5500', '#fa8072', '#ff7f50', '#ff8c00', '#ffcc99', '#ffbf00'],
-        image: 'images/suit15.jpg',
-        placeholder: 'https://placehold.co/600x800/1a1a1a/d4af37?text=بدلة+برتقالية'
     }
 ];
 
