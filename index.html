@@ -9,6 +9,7 @@
     <title>Location Costume Haydi | كراء البدلات الرجالية في الجديدة</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?display=swap&amp;family=Cairo:wght@300;400;500;600;700;800&amp;family=Tajawal:wght@300;400;500;700;800;900" rel="stylesheet">
+    <!-- Font Awesome للإيقونات - قد لا يعمل في بعض المناطق -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -18,7 +19,8 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <i class="fas fa-tshirt"></i>
+                    <!-- شعار نصي بدون أيقونة -->
+                    <div class="logo-icon">👔</div>
                     <div>
                         <span class="logo-main">Location Costume</span>
                         <span class="logo-sub">Haydi</span>
@@ -31,7 +33,7 @@
                     <a href="#contact">اتصل بنا</a>
                 </div>
                 <div class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
+                    <span>☰</span>
                 </div>
             </div>
         </div>
@@ -51,16 +53,16 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#gallery" class="btn-primary">
-                        <i class="fas fa-eye"></i> تصفح البدلات
+                        👔 تصفح البدلات
                     </a>
                     <a href="#contact" class="btn-outline">
-                        <i class="fas fa-phone"></i> اتصل بنا
+                        📞 اتصل بنا
                     </a>
                 </div>
             </div>
         </div>
         <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+            <span>▼</span>
         </div>
     </section>
 
@@ -69,22 +71,22 @@
         <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-gem"></i>
+                    <div class="feature-icon">💎</div>
                     <h3>جودة فاخرة</h3>
                     <p>أفضل أنواع الأقمشة الإيطالية</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-truck"></i>
+                    <div class="feature-icon">🚚</div>
                     <h3>توصيل مجاني</h3>
                     <p>للمناسبات داخل مدينة الجديدة</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-star"></i>
+                    <div class="feature-icon">⭐</div>
                     <h3>خدمة ممتازة</h3>
                     <p>فريق متخصص لمساعدتك</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-calendar-alt"></i>
+                    <div class="feature-icon">📅</div>
                     <h3>حجز مرن</h3>
                     <p>إلغاء أو تعديل مجاني</p>
                 </div>
@@ -122,23 +124,23 @@
         <div class="container">
             <div class="info-grid">
                 <div class="info-card">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-icon">📍</div>
                     <h3>العنوان</h3>
                     <p>268, El Jadida 24000</p>
                     <a href="https://maps.google.com/?q=268+El+Jadida+24000" target="_blank" class="info-link">
-                        فتح في الخريطة <i class="fas fa-external-link-alt"></i>
+                        فتح في الخريطة →
                     </a>
                 </div>
                 <div class="info-card">
-                    <i class="fas fa-phone-alt"></i>
+                    <div class="info-icon">📞</div>
                     <h3>الهاتف</h3>
                     <p>0618185449</p>
                     <a href="tel:0618185449" class="info-link">
-                        اتصل الآن <i class="fas fa-phone"></i>
+                        اتصل الآن 📱
                     </a>
                 </div>
                 <div class="info-card">
-                    <i class="fas fa-clock"></i>
+                    <div class="info-icon">🕐</div>
                     <h3>أوقات العمل</h3>
                     <ul class="hours-list">
                         <li><span>الإثنين - السبت:</span> <span>09:00 - 21:30</span></li>
@@ -186,9 +188,9 @@
                 <div class="footer-section">
                     <h4>تابعنا</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#">📷</a>
+                        <a href="#">📘</a>
+                        <a href="#">💬</a>
                     </div>
                 </div>
             </div>
@@ -203,17 +205,17 @@
        class="whatsapp-float" 
        target="_blank"
        rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
+        <span>💬</span>
         <span class="whatsapp-text">استفسر الآن</span>
     </a>
 
     <!-- ========== نافذة عرض الصورة (Lightbox) ========== -->
     <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
+        <span class="close-lightbox">✕</span>
         <img class="lightbox-content" id="lightbox-img">
         <div id="lightbox-caption"></div>
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
+        <a class="prev">❮</a>
+        <a class="next">❯</a>
     </div>
 
     <script src="script.js"></script>
