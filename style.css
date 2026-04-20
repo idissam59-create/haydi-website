@@ -942,3 +942,112 @@ body {
 .whatsapp-float span:first-child {
     font-size: 24px;
 }
+/* ========== أنماط التذييل (Footer) مع الشعار ========== */
+
+.footer {
+    background: var(--charcoal);
+    padding: 50px 0 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3, .footer-section h4 {
+    margin-bottom: 15px;
+    color: var(--gold);
+}
+
+.footer-section p {
+    color: var(--gray);
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer-section a {
+    display: block;
+    color: var(--gray);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--gold);
+}
+
+/* منطقة الشعار في التذييل */
+.footer-logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+    border-radius: 12px;
+}
+
+.footer-logo-area h3 {
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+/* معلومات الاتصال في التذييل */
+.footer-address, .footer-phone {
+    margin-top: 10px;
+}
+
+/* روابط التواصل الاجتماعي */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-link {
+    display: inline-block !important;
+}
+
+/* أيام الأحد بلون مميز */
+.sunday-hours {
+    color: var(--gold);
+}
+
+/* التذييل السفلي */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray);
+    font-size: 14px;
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-logo-area {
+        justify-content: center;
+    }
+    
+    .social-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .footer-logo-img {
+        height: 45px;
+    }
+}
