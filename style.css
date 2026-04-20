@@ -6,20 +6,21 @@
 }
 
 :root {
-    --black: #0a0a0a;
-    --charcoal: #1a1a1a;
-    --dark-gray: #2a2a2a;
-    --gold: #d4af37;
-    --gold-dark: #b8960c;
-    --gold-light: #f5e6a3;
     --white: #ffffff;
-    --gray: #9ca3af;
+    --gold: #d4af37;
+    --gold-light: #f5e6a3;
+    --gold-dark: #b8960c;
+    --gold-shiny: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #d4af37 100%);
+    --black: #1a1a1a;
+    --dark-gray: #333333;
+    --gray: #666666;
+    --light-gray: #f5f5f5;
 }
 
-body {
+:body {
     font-family: 'Cairo', 'Tajawal', sans-serif;
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--black);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -35,11 +36,12 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 15px 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .nav-content {
@@ -62,7 +64,7 @@ body {
 .logo-main {
     font-size: 18px;
     font-weight: 700;
-    color: var(--white);
+    color: var(--black);
 }
 
 .logo-sub {
@@ -71,9 +73,11 @@ body {
     display: block;
 }
 
-.nav-links {
-    display: flex;
-    gap: 30px;
+.nav-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 .nav-links a {
@@ -85,23 +89,84 @@ body {
 
 .nav-links a:hover {
     color: var(--gold);
-}
 
 .menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--gold);
+    color: var(--black);
 }
 
 /* ========== القسم الرئيسي ========== */
+
+بناء موقع كراء بدلات مع نظام حجز
+سأوضح لك بالضبط ما يجب تغييره في ملف style.css لتحويل لون الخلفية إلى الأبيض والذهبي اللامع مع خطوط سوداء.
+
+🎨 التغييرات المطلوبة في ملف style.css
+1. تغيير المتغيرات العامة (الألوان الأساسية)
+ابحث عن :root في بداية الملف واستبدله بهذا:
+
+css
+:root {
+    --white: #ffffff;
+    --gold: #d4af37;
+    --gold-light: #f5e6a3;
+    --gold-dark: #b8960c;
+    --gold-shiny: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #d4af37 100%);
+    --black: #1a1a1a;
+    --dark-gray: #333333;
+    --gray: #666666;
+    --light-gray: #f5f5f5;
+}
+
+css
+body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+3. تغيير شريط التنقل
+css
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.logo-main {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.menu-toggle {
+    color: var(--black);
+}
+4. تغيير القسم الرئيسي (Hero)
+css
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #fef9e6 50%, #ffffff 100%);
     overflow: hidden;
 }
 
@@ -111,7 +176,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
 }
 
 .hero-content {
@@ -139,7 +204,7 @@ body {
 }
 
 .white-text {
-    color: var(--white);
+    color: var(--black);
     display: block;
 }
 
@@ -169,8 +234,9 @@ body {
 }
 
 .btn-primary {
-    background: var(--gold);
+    background: var(--gold-shiny);
     color: var(--black);
+    border: none;
 }
 
 .btn-primary:hover {
@@ -181,12 +247,12 @@ body {
 .btn-outline {
     border: 2px solid var(--gold);
     color: var(--gold);
+    background: transparent;
 }
 
 .btn-outline:hover {
     background: var(--gold);
     color: var(--black);
-    transform: translateY(-2px);
 }
 
 .scroll-indicator {
@@ -202,38 +268,31 @@ body {
 /* ========== بطاقات المميزات ========== */
 .features {
     padding: 60px 0;
-    background: var(--charcoal);
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
 }
 
 .feature-card {
     text-align: center;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--white);
     border-radius: 15px;
     transition: all 0.3s;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
     border-color: var(--gold);
-}
-
-.feature-card i {
-    font-size: 40px;
-    color: var(--gold);
-    margin-bottom: 15px;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
 }
 
 .feature-card h3 {
     font-size: 20px;
     margin-bottom: 10px;
+    color: var(--black);
 }
 
 .feature-card p {
@@ -244,11 +303,7 @@ body {
 /* ========== معرض الصور ========== */
 .gallery {
     padding: 80px 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
+    background: var(--white);
 }
 
 .section-header h2 {
@@ -257,35 +312,20 @@ body {
     margin-bottom: 15px;
 }
 
-.section-divider {
-    width: 60px;
-    height: 3px;
-    background: var(--gold);
-    margin: 0 auto 20px;
-}
-
 .section-header p {
     color: var(--gray);
 }
 
-/* أزرار التصفية */
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
 .filter-btn {
     padding: 8px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: transparent;
+    border: 2px solid var(--gold);
     border-radius: 50px;
-    color: var(--white);
+    color: var(--black);
     cursor: pointer;
     transition: all 0.3s;
     font-family: inherit;
+    font-weight: 500;
 }
 
 .filter-btn.active, .filter-btn:hover {
@@ -294,45 +334,26 @@ body {
     border-color: var(--gold);
 }
 
-/* شبكة الصور */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-}
-
 .gallery-item {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--white);
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s;
     cursor: pointer;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .gallery-item:hover {
     transform: translateY(-5px);
     border-color: var(--gold);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-info {
-    padding: 15px;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
 }
 
 .gallery-info h3 {
     font-size: 18px;
     margin-bottom: 5px;
+    color: var(--black);
 }
 
 .gallery-info p {
@@ -355,7 +376,7 @@ body {
 .color-section {
     margin-top: 12px;
     padding-top: 8px;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .color-label {
@@ -364,112 +385,41 @@ body {
     margin-bottom: 8px;
 }
 
-.color-dots {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.color-tooltip {
-    position: relative;
-    display: inline-block;
-}
-
 .color-dot {
     width: 28px;
     height: 28px;
     border-radius: 50%;
     cursor: pointer;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .color-dot:hover {
     transform: scale(1.15);
     border-color: var(--gold);
 }
-
-.tooltip-text {
-    visibility: hidden;
-    background-color: var(--gold);
-    color: var(--black);
-    text-align: center;
-    padding: 4px 8px;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 10;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    font-size: 11px;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.color-tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* ========== رسالة منبثقة للألوان ========== */
-.color-toast {
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
-    background: var(--gold);
-    color: var(--black);
-    padding: 12px 20px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 2000;
-    transform: translateX(200%);
-    transition: transform 0.3s ease;
-    font-weight: bold;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
-.color-toast.show {
-    transform: translateX(0);
-}
-
-.color-toast i {
-    font-size: 18px;
-}
-
 /* ========== معلومات المتجر ========== */
 .info {
     padding: 80px 0;
-    background: var(--charcoal);
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
 }
 
 .info-card {
     text-align: center;
     padding: 35px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--white);
     border-radius: 20px;
-    border: 1px solid rgba(212, 175, 55, 0.15);
-}
-
-.info-card i {
-    font-size: 45px;
-    color: var(--gold);
-    margin-bottom: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .info-card h3 {
     font-size: 22px;
     margin-bottom: 15px;
+    color: var(--black);
 }
 
 .info-card p {
@@ -485,24 +435,12 @@ body {
     transition: color 0.3s;
 }
 
-.info-link:hover {
-    color: var(--gold-light);
-}
-
-.hours-list {
-    list-style: none;
-    text-align: center;
-}
-
 .hours-list li {
     display: flex;
     justify-content: space-between;
     padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sunday-hours {
-    color: var(--gold);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--black);
 }
 
 /* ========== الخريطة ========== */
@@ -523,16 +461,9 @@ body {
 
 /* ========== تذييل الصفحة ========== */
 .footer {
-    background: var(--charcoal);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
     padding: 50px 0 20px;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+    border-top: 3px solid var(--gold);
 }
 
 .footer-section h3, .footer-section h4 {
@@ -540,34 +471,19 @@ body {
     color: var(--gold);
 }
 
-.footer-section a {
-    display: block;
-    color: var(--gray);
-    text-decoration: none;
-    margin-bottom: 10px;
-    transition: color 0.3s;
+.footer-section p, .footer-section a {
+    color: #cccccc;
 }
 
 .footer-section a:hover {
     color: var(--gold);
 }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a {
-    display: inline-block;
-    font-size: 24px;
-}
-
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--gray);
-    font-size: 14px;
+    color: #999999;
 }
 
 /* ========== زر واتساب عائم ========== */
@@ -1050,4 +966,37 @@ body {
     .footer-logo-img {
         height: 45px;
     }
+    /* ========== تأثيرات ذهبية إضافية ========== */
+
+/* خط ذهبي متوهج */
+.gold-border-bottom {
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+}
+
+/* خلفية ذهبية شفافة */
+.gold-bg-light {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+}
+
+/* تأثير لمعان على الذهب */
+@keyframes gold-shine {
+    0% { text-shadow: 0 0 0px rgba(212, 175, 55, 0); }
+    50% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+    100% { text-shadow: 0 0 0px rgba(212, 175, 55, 0); }
+}
+
+.gold-text {
+    color: var(--gold);
+    animation: gold-shine 3s ease-in-out infinite;
+}
+
+/* حدود سوداء أنيقة */
+.black-border {
+    border: 1px solid var(--black);
+}
+
+/* بطاقات بظل ذهبي */
+.premium-shadow {
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
 }
